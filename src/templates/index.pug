@@ -1,0 +1,202 @@
+extends layout
+block title
+    title Главная
+    script(src='https://code.jquery.com/jquery-3.1.1.js', integrity='sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=', crossorigin='anonymous')
+block css
+
+
+block header
+    header.page-header
+        section
+            .container
+               .flex-container.head-section
+                   .flex-items
+                       .left-title Окна с завода!
+                       a.master-popup
+                           |
+                           span Вызвать замерщика на дом
+                   .flex-items
+                       a.brand(href='index.html')
+                           img(src='images/logo.png', alt='')
+                           .brand__head-title
+                               | Пластиковые окна
+                           .brand__footer-title
+                               | С завода <span> 100% дешевле</span>
+
+                   .flex-items
+                       p.work-schedule
+                           | Звоните с <span>8:00</span>
+                           | до <span>23:00</span>
+                           | ежедневно
+
+                       a.tell(href='tel:8 (495) 104-80-15') 8 (495) 104-80-15
+                       a.tell-popup
+                           |
+                           span Вызвать замерщика на дом
+        section
+            nav.mob-menu
+                .mob-menu__title Меню сайта
+                .mob-menu__dropdown
+                    .mob-menu__btn
+
+            ul.navigation__container.navigation
+                li.navigation__item
+                    a.navigation__item-wrapp
+                        img.navigation__img(src='../images/bm1.png', alt='')
+                        p.navigation__title Пластиковые окна
+                    ul.navigation__sub-container
+                        li.navigation__sub-item
+                            a.navigation__sub-title Пластиковые окна
+                        li.navigation__sub-item
+                            a.navigation__sub-title Готовые окна
+                        li.navigation__sub-item
+                            a.navigation__sub-title Цены на окна
+                li.navigation__item
+                    a.navigation__item-wrapp
+                        img.navigation__img(src='../images/bm2.png', alt='')
+                        p.navigation__title Остекление балконов
+                    ul.navigation__sub-container.hidden
+                        li.navigation__sub-item
+                            a.navigation__sub-title Остекление балконов
+                        li.navigation__sub-item
+                            a.navigation__sub-title Готовые балконы
+                        li.navigation__sub-item
+                            a.navigation__sub-title Цены на балконы
+                li.navigation__item
+                    a.navigation__item-wrapp
+                        img.navigation__img(src='../images/bm3.png', alt='')
+                        p.navigation__title Отделка балконов
+                li.navigation__item
+                    a.navigation__item-wrapp
+                        img.navigation__img(src='../images/bm4.png', alt='')
+                        p.navigation__title Окна в дом
+                    ul.navigation__sub-container.hidden
+                        li.navigation__sub-item
+                            a.navigation__sub-title Окна в дом
+                        li.navigation__sub-item
+                            a.navigation__sub-title Деревянные окна
+                li.navigation__item
+                    a.navigation__item-wrapp
+                        img.navigation__img(src='../images/bm5.png', alt='')
+                        p.navigation__title Контакты
+                li.navigation__item
+                    a.navigation__item-wrapp
+                        img.navigation__img(src='../images/bm6.png', alt='')
+                        p.navigation__title Акции и скидки
+
+block main
+    main.well3
+        section
+            .container
+                h2.text-center.default Отзывы наших заказчиков
+
+                -for(var i=0; i<3; i++)
+                    .review
+                        .review__asside
+                            img.review__img(src='http://thegriffingroupe.com/wp-content/uploads/2014/05/Woman-on-Phone-in-Busy-Modern-Office.jpg', alt='')
+                            .review__img--top
+                            .review__img--left
+                            .review__img--right
+                            .review__img--bottom
+                            img.review__recoment(src="images/recomendete.png" alt="")
+
+                        .review__cnt
+                            .review__head
+                                .review__bio
+                                    .review__fio Завражнова Светлана
+                                    .review__sity г. Домодедово
+                                .review__rating
+                                    .review__pre-rat Оценка:
+                                    .rateit(data-rateit-value='5', data-rateit-ispreset='true', data-rateit-readonly='true')
+                            .review__text
+                                | Я всю жизнь проработал мастером на заводе ЗИЛ и для меня отношение к своей работе главный показатель человека. Мастера установившие окна настоящие профессионалы своего дела! Побольше бы таких в нашей стране!
+                .pagination-wrapp
+                    .pagination
+                        ul.pagination
+                            //li.pagination__item
+                            //    a.pagination__first
+                            li.pagination__item
+                                a.pagination__prew
+                            li.pagination__item.pagination__item--active
+                                | 1
+                            li.pagination__item
+                                a.pagination__link 2
+                            li.pagination__item
+                                a.pagination__link 3
+                            li.pagination__item
+                                a.pagination__link 4
+                            //li.pagination__item
+                            //    a.pagination__link 5
+                            //li.pagination__item
+                            //    a.pagination__link 6
+                            li.pagination__item.pagination__item--dotet
+                                | ...
+                            li.pagination__item
+                                a.pagination__link 9
+                            li.pagination__item
+                                a.pagination__next
+                            //li.pagination__item
+                            //    a.pagination__last
+        section.form-bg
+            .container
+                h2.text-center.white Отавить отзыв
+                .write-review-wrapp
+                    form.write-review
+                        .write-review__wrapp
+                            .write-review__asside
+                                .upload(upload-image='')
+                                    input#files.upload__file(type='file', name='files')
+                                    label(for='files')
+                                        img.upload__img(src='images/avatar.png', alt='')
+                                        a.upload__text
+                                            span Загрузить<br/>фото
+                                        output#list
+
+
+                            .write-review__cnt.form-group.placeholder-color.placeholder-effect2
+                                .write-review__head
+                                    .write-review__fio.placeholder-overflow
+                                        label
+                                            input(class='form-input' id='fio', type='', value='', placeholder='Имя', required='')
+                                    .write-review__location.form-group.placeholder-overflow
+                                        label
+                                            input(class='form-input' id='location', type='', value='', placeholder='Город', required='')
+                                .write-review__textaria
+                                    .write-review__comment
+                                        textarea(class='form-textarea' name='', placeholder='Ваш отзыв')
+                        .write-review__wrapp
+
+                            .write-review__footer
+                                .write-review__footer-item
+                                    .checkbox-group
+                                        input#checkbox1(type='checkbox', name='type')
+                                        label(for='checkbox1') Порекомендую
+                                .write-review__footer-item
+                                    .write-review__rating
+                                        .review__pre-rat Оценка:
+                                        .rateit(data-rateit-value='', data-rateit-ispreset='false', data-rateit-readonly='false')
+                                .write-review__footer-item
+                                    .write-review__button
+                                        batton.btn1.btn-style1.btn-effect1.offs2(type='submit')
+                                            | Отправить
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,127 @@
+/*=========================================================*/
+/*                    Navigation                           */
+/*=========================================================*/
+.navigation{
+  margin-top: 30px;
+  &__container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin:0 -5px;
+  }
+  &__item{
+    margin: 5px;
+    background: linear-gradient(0deg, rgb(221, 228, 229) 30%, rgb(240, 243, 245) 70%);
+    @include border-radius(4px);
+    &:last-child{
+      background: $yellow;
+    }
+  }
+
+  &__item-wrapp{
+    display: flex;
+    padding: 15px;
+    align-items: center;
+
+
+  }
+  &__img{
+    margin-right: 15px;
+    height: 41px;
+  }
+  &__title{
+    color: $default;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    font-family: $default-font-family;
+    max-width: 120px;
+
+
+  }
+
+  &__sub-container{
+    //visibility: hidden;
+    display: none;
+    position: absolute;
+    transition-delay: 1s;
+
+    //display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    margin: 2px 0 0 15px;
+    border: 1px solid $yellow;
+    background: $white;
+    @include border-radius(4px);
+    &:before{
+      position: absolute;
+      content: '';
+      top: -13px;
+      left: 20%;
+      @include triangle(top, 20px, 12px, $yellow);
+    }
+    &:after{
+      position: absolute;
+      content: '';
+      top: -12px;
+      left: 20%;
+      @include triangle(top, 20px, 12px, $white);
+    }
+  }
+  &__sub-item{
+    margin: 1px;
+    background: $white;
+    z-index:2;
+
+  }
+  &__sub-title{
+    text-decoration: underline;
+    display: block;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+    font-family: $default-font-family;
+    padding: calc(34px - 22px - 2px - 2px) 5px;
+  }
+}
+
+
+.navigation{
+  &__mobileView{
+    display: none;
+    &--opened{
+      display: flex;
+    }
+  }
+}
+
+
+.navigation__item:hover{
+  .navigation__title{
+    color: red;
+  }
+}
+
+.navigation__sub-title:hover{
+  color: red;
+}
+
+.navigation__item:hover{
+  .navigation__sub-container{
+    //visibility: visible;
+    display: flex;
+  }
+}
+
+
+
+
+
+//.navigation__sub-container{
+//  display: none;
+//}

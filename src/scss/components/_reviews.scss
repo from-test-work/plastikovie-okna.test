@@ -1,0 +1,114 @@
+/*=========================================================*/
+/*                    Reviews                              */
+/*=========================================================*/
+.review {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  //align-items: center;
+  color: $black;
+  &__asside {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transform-origin: 50% 50% 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    width: 380px;
+    height: auto;
+  }
+  &__cnt {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 380px);
+  }
+
+  &__img {
+    //padding: 10px 40px 20px;
+    width: 300px;
+    height: 300px;
+    transform: rotate(-4deg);
+    &--left,
+    &--right,
+    &--bottom {
+      position: absolute;
+    }
+
+    &--left {
+      left: 10px;
+      top: 40px;
+      transform: rotate(-4deg);
+      @include triangle(top_right, 270px, 12px, #eeeef0);
+    }
+    &--right {
+      right: 15px;
+      top: 30px;
+      @include triangle(top_right, 270px, 15px, #f9d4ad);
+    }
+    &--bottom {
+      right: 30px;
+      bottom: 0;
+      transform: rotate(-4deg);
+      @include triangle(bottom_right, 12px, 270px, #eeeef0);
+    }
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 20px 20px;
+  }
+  &__text {
+    font-size: 22px;
+    line-height: 1.2;
+    padding: 30px 45px;
+    background: $yellow;
+    border-radius: 6px;
+  }
+
+  &__bio,
+  &__rating {
+    width: 48%;
+  }
+
+  &__bio{
+  }
+  &__pre-rat{
+    font-size: 20px;
+  }
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__fio {
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  &__sity {
+    font-size: 14px;
+  }
+
+
+  &__recoment{
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    width: 180px;
+    height: 60px;
+  }
+}
+
+
+.review {
+  &__pre-rat + *{
+    margin-left: 10px;
+  }
+}

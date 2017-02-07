@@ -1,0 +1,355 @@
+// default style
+$form--fsz: inherit !default;
+$form--lh: 1.2;
+$form--fw: inherit !default;
+$form--color: grey !default;
+$form--border-sise: 0px !default;
+$form--border: $form--border-sise solid $form--color !default;
+$form--border-radius: 4+'px';
+// input style
+$form-input--height: 56px !default;
+$form-input--line-height: 30px !default;
+$form-input--padding-left: 50px !default;
+$form-input--padding-right: 10px !default;
+// textarea style
+$form-textarea--height: 180px !default;
+// color validate
+$form-control--danger-color: red;
+$form-control--warning-color: orange;
+$form-control--valid-color: green;
+// icon validate style
+$form-validationIcon--width: 14px;
+$form-validationIcon--height: 14px;
+$form-validationIcon--pull-right: 5px;
+$form-validationIcon--pull-left: 5px;
+
+$placeholder-size: 15px !default;
+$placeholder-line-height: 24px !default;
+
+
+.form-group {
+  position: relative;
+
+  &.has-error,
+  &.has-success,
+  &.has-warning {
+    label {
+      visibility: visible;
+      opacity: 1;
+    }
+    &.textarea-error {
+      padding-bottom: 10px;
+      label {
+        bottom: 0;
+      }
+    }
+  }
+
+  &.has-error {
+    label {
+      color: $form-control--danger-color;
+    }
+    input, textarea {
+      border: 1px solid $form-control--danger-color;
+    }
+  }
+  &.has-success {
+    label {
+      color: $form-control--valid-color;
+    }
+    input, textarea {
+      border: 1px solid $form-control--valid-color;
+    }
+  }
+  &.has-warning {
+    label {
+      color: $form-control--warning-color;
+    }
+    input, textarea {
+      border: 1px solid $form-control--warning-color;
+    }
+  }
+
+  &.has-validcon-right {
+    .form-input {
+      padding-right: calc(#{$form-validationIcon--width} + (#{$form-validationIcon--pull-right} * 2));
+    }
+  }
+
+  &.has-validcon-left {
+    .form-input {
+      padding-left: calc(#{$form-validationIcon--width} + (#{$form-validationIcon--pull-left} * 2));
+    }
+  }
+
+  label {
+    display: block;
+    position: relative;
+    .form-validationText {
+      position: absolute;
+      display: block;
+      width: 100%;
+      bottom: -16px;
+    }
+    .form-validationIcon-right,
+    .form-validationIcon-left {
+      position: absolute;
+      top: 50%;
+      width: $form-validationIcon--width;
+      height: $form-validationIcon--height;
+      border-radius: 50%;
+      background: #000;
+      transform: translateY(-50%);
+    }
+
+    .form-validationIcon-right {
+      right: $form-validationIcon--pull-right;
+    }
+
+    .form-validationIcon-left {
+      left: $form-validationIcon--pull-left;
+    }
+  }
+
+  //input styles
+  .form-input {
+    display: block;
+    text-align: left;
+    outline: none;
+    width: 100%;
+    //background: $white;
+    border: $form--border;
+    height: $form-input--height;
+    padding-left: $form-input--padding-left;
+    padding-right: $form-input--padding-right;
+    -webkit-appearance: none;
+    @include box-shadow(inset 0px 3px 3px 0px rgba(205, 205, 205, 0.75));
+    @include border-radius(unquote($form--border-radius));
+  }
+
+
+  .form-textarea {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    padding: 20px 20px 20px 50px;
+    resize: none;
+    outline: none;
+    //background: $white;
+    height: $form-textarea--height;
+    font-size: $form--fsz;
+    line-height: $form--lh;
+    font-weight: $form--fw;
+    font-family: $default-font-family;
+    border: $form--border;
+    border-radius: $form--border-radius;
+    -webkit-appearance: none;
+    @include box-shadow(inset 0px 3px 3px 0px rgba(205, 205, 205, 0.75));
+    @include border-radius(unquote($form--border-radius));
+  }
+
+
+
+  //.search-submit{
+  //  input[type="submit"] {
+  //    background: url("../images/search-icon.png") no-repeat transparent center center;
+  //  }
+  //  &.search-before__right{
+  //    &:before{
+  //      background: url("../images/search-icon.png") no-repeat transparent center center;
+  //    }
+  //  }
+  //  &.search-before__left{
+  //    &:before{
+  //      background: url("../images/search-icon.png") no-repeat transparent center center;
+  //    }
+  //  }
+  //}
+  //
+  //.point-submit {
+  //  input[type="submit"] {
+  //    background: url("../images/search-icon.png") no-repeat red center center;
+  //  }
+  //}
+
+
+
+
+
+  .search-submit, .point-submit {
+    &__left {
+      input[type="submit"] {
+        left: $form--border-sise;
+      }
+      .form-input {
+        padding-left: calc(#{$form-input--height} + 5px);
+      }
+    }
+    &__right {
+      input[type="submit"] {
+        right: $form--border-sise;
+      }
+      .form-input {
+        padding-right: calc(#{$form-input--height} + 5px);
+      }
+    }
+    input[type="submit"] {
+      position: absolute;
+      width: calc(#{$form-input--height} - (#{$form--border-sise} * 2));
+      height: calc(#{$form-input--height} - (#{$form--border-sise} * 2));
+      top: $form--border-sise;
+      border: none;
+      //background: url("../images/search-icon.png") no-repeat transparent center center;
+    }
+
+    &.search-before__right{
+      .form-input {
+        padding-right: calc(#{$form-input--height} + 5px);
+      }
+      &:before{
+        position: absolute;
+        content: '';
+        width: calc(#{$form-input--height} - (#{$form--border-sise} * 2));
+        height: calc(#{$form-input--height} - (#{$form--border-sise} * 2));
+        top: $form--border-sise;
+        border: none;
+        //background: url("../images/search-icon.png") no-repeat #000 center center;
+        right: 0;
+      }
+    }
+    &.search-before__left{
+      .form-input {
+        padding-left: calc(#{$form-input--height} + 5px);
+      }
+      &:before{
+        position: absolute;
+        content: '';
+        width: calc(#{$form-input--height} - (#{$form--border-sise} * 2));
+        height: calc(#{$form-input--height} - (#{$form--border-sise} * 2));
+        top: $form--border-sise;
+        border: none;
+        //background: url("../images/search-icon.png") no-repeat #000 center center;
+        left: 0;
+      }
+    }
+  }
+
+
+
+  @if ($form--border-radius != '0px') {
+    .search-submit__left {
+      input[type="submit"] {
+        @include border-left-radius(unquote($form--border-radius));
+      }
+    }
+    .search-submit__right {
+      input[type="submit"] {
+        @include border-right-radius(unquote($form--border-radius));
+      }
+    }
+
+    .search-before__left {
+      &:before {
+        @include border-left-radius(unquote($form--border-radius));
+      }
+    }
+    .search-before__right {
+      &:before {
+        @include border-right-radius(unquote($form--border-radius));
+      }
+    }
+  }
+
+
+
+
+  .placeholder-size{
+    input,
+    textarea{
+      font-size: $placeholder-size;
+      line-height: $placeholder-line-height;
+      font-family: $default-font-family;
+    }
+  }
+}
+
+
+
+//placeholder-overflow
+.placeholder-overflow{
+  input[placeholder]          {text-overflow:ellipsis;}
+  input::-moz-placeholder     {text-overflow:ellipsis;}
+  input:-moz-placeholder      {text-overflow:ellipsis;}
+  input:-ms-input-placeholder {text-overflow:ellipsis;}
+}
+
+//placeholder-color
+.placeholder-color{
+  ::-webkit-input-placeholder {color:$black;}
+  ::-moz-placeholder          {color:$black;}
+  :-moz-placeholder           {color:$black;}
+  :-ms-input-placeholder      {color:$black;}
+}
+//placeholder-color-validation
+.placeholder-color.has-success{
+  ::-webkit-input-placeholder {color:$form-control--valid-color;}
+  ::-moz-placeholder          {color:$form-control--valid-color;}
+  :-moz-placeholder           {color:$form-control--valid-color;}
+  :-ms-input-placeholder      {color:$form-control--valid-color;}
+}
+
+.placeholder-color.has-warning{
+  ::-webkit-input-placeholder {color:$form-control--warning-color;}
+  ::-moz-placeholder          {color:$form-control--warning-color;}
+  :-moz-placeholder           {color:$form-control--warning-color;}
+  :-ms-input-placeholder      {color:$form-control--warning-color;}
+}
+
+.placeholder-color.has-error{
+  ::-webkit-input-placeholder {color:$form-control--danger-color;}
+  ::-moz-placeholder          {color:$form-control--danger-color;}
+  :-moz-placeholder           {color:$form-control--danger-color;}
+  :-ms-input-placeholder      {color:$form-control--danger-color;}
+}
+//placeholder-effect
+.placeholder-effect1{
+  :focus::-webkit-input-placeholder {color: transparent}
+  :focus::-moz-placeholder          {color: transparent}
+  :focus:-moz-placeholder           {color: transparent}
+  :focus:-ms-input-placeholder      {color: transparent}
+}
+
+.placeholder-effect2{
+  ::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+  ::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+  :-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+  :-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+  :focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+  :focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+  :focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+  :focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+}
+
+.placeholder-effect3{
+  ::-webkit-input-placeholder       {text-indent: 0;     transition: text-indent 0.3s ease;}
+  ::-moz-placeholder                {text-indent: 0;     transition: text-indent 0.3s ease;}
+  :-moz-placeholder                 {text-indent: 0;     transition: text-indent 0.3s ease;}
+  :-ms-input-placeholder            {text-indent: 0;     transition: text-indent 0.3s ease;}
+  :focus::-webkit-input-placeholder {text-indent: 500px; transition: text-indent 0.3s ease;}
+  :focus::-moz-placeholder          {text-indent: 500px; transition: text-indent 0.3s ease;}
+  :focus:-moz-placeholder           {text-indent: 500px; transition: text-indent 0.3s ease;}
+  :focus:-ms-input-placeholder      {text-indent: 500px; transition: text-indent 0.3s ease;}
+}
+
+.placeholder-effect4{
+  ::-webkit-input-placeholder        {line-height: 20px;  transition: line-height 0.5s ease;}
+  ::-moz-placeholder                 {line-height: 20px;  transition: line-height 0.5s ease;}
+  :-moz-placeholder                  {line-height: 20px;  transition: line-height 0.5s ease;}
+  :-ms-input-placeholder             {line-height: 20px;  transition: line-height 0.5s ease;}
+  :focus::-webkit-input-placeholder  {line-height: 100px; transition: line-height 0.5s ease;}
+  :focus::-moz-placeholder           {line-height: 100px; transition: line-height 0.5s ease;}
+  :focus:-moz-placeholder            {line-height: 100px; transition: line-height 0.5s ease;}
+  :focus:-ms-input-placeholder       {line-height: 100px; transition: line-height 0.5s ease;}
+}
+
+// coded by Belkins & Alex B.

@@ -1,0 +1,107 @@
+/*=========================================================*/
+/*                    Write Review                         */
+/*=========================================================*/
+.write-review-wrapp {
+  padding: 60px;
+}
+
+.write-review{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: $yellow;
+  padding: 60px 60px 60px 70px;
+  border-radius: 6px;
+
+  &__wrapp{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+
+
+  &__asside{
+    display: flex;
+    justify-content: center;
+    width: 260px;
+    height: auto;
+    margin-right: 35px;
+  }
+  &__cnt{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 260px - 35px);
+  }
+  &__footer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  &__footer-item{
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  &__head{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__textaria{
+    margin-top: 24px;
+  }
+
+  &__fio,
+  &__location{
+    width: 48%;
+    font-size: 20px;
+    line-height: 56px;
+    font-weight: 400;
+    font-family: $default-font-family;
+    border-radius: 4px;
+  }
+
+  &__fio{
+    background: $white url("../../images/user-name.png") 15px 15px no-repeat;
+  }
+  &__location{
+    background: $white url("../../images/user-location.png") 15px 15px no-repeat;
+  }
+
+  &__comment{
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: $default-font-family;
+    border-radius: 4px;
+    background: $white url("../../images/user-comment.png") 15px 8px no-repeat;
+  }
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__button{
+    width: 286px;
+  }
+
+  .checkbox-group{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    label{
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+

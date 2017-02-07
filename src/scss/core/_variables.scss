@@ -1,0 +1,53 @@
+//========================================================
+//                     Variables
+//=========================================================
+
+// Resolutions
+$screen-xs-min: 576px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+// Fonts
+$default-font-family: 'Exo 2', sans-serif;
+$default-font-weight: normal;
+$default-font-size: 14px;
+$default-line-height: 20px;
+
+$fa: 'FontAwesome';
+
+
+// Colors
+$color-link: #59a0c1;
+
+$white: #ffffff;
+$black: #000000;
+$gray:  #808080;
+$blue:  #0f7cba;
+$green: #38a622;
+$orange: #ff7800;
+$yellow: #ffcb44;
+$red: #c02940;
+$purpur: #E806FF;
+$default: #1a1918;
+$flex-item-bg: #ebebeb;
+
+$primary: $blue;
+$secondary-1: #81c03d;
+
+$header-color: $white;
+$header-bg: $white;
+
+$content-color: $default;
+$content-bg: $white;
+
+$footer-color: $white;
+$footer-bg: $default;
+
+$aleba-colors: (
+		color-1: #ff3246,
+		color-2: #fac800,
+		color-3: #6eb43c,
+		color-4: #64aaff
+);
+
